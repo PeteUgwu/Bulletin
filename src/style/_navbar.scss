@@ -1,0 +1,19 @@
+.Nav {
+  width: 100%;
+  padding: 0.2rem 2rem;
+  color: #fff;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &-items {
+    justify-content: space-between;
+  }
+
+  .Icon-left {
+    margin-right: 0.5rem;
+    color: #fff;
+  }
+}

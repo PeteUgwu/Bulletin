@@ -1,0 +1,12 @@
+.homeContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 5rem;
+  background: #fff;
+  place-items: center;
+}
+
+.card {
+  background: red;
+}
