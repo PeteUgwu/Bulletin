@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import moment from "moment/moment";
 import { fetchNews } from "../../redux/news/newsSlice";
 import S from "../../style/component/home/homebody.module.scss";
 import Pagination from "../../shared/Pagination";
 import newsList from "../../shared/Data.json";
-import moment from "moment/moment";
 
 const HomeBody = () => {
   // const newsList = useSelector((state) => state.news.news);
@@ -99,10 +99,12 @@ const HomeBody = () => {
             <div key={news?.publishedAt} className={`${S.card}`}>
               <h6>{news.title}</h6>
               <p>{news.description}</p>
-              <p>Written by: {news.author}</p>
-              <p>
-                Published at: {moment(news.publishedAt).format("MMM Do YY")}
-              </p>
+              <div className={`${S.authorPub}`}>
+                <p>Written by: {news.author}</p>
+                <p>
+                  Published at: {moment(news.publishedAt).format("MMM Do YY")}
+                </p>
+              </div>
               <Link to={`/news/${news.publishedAt}`}>Click to view</Link>
             </div>
           ))}
