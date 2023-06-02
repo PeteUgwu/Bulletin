@@ -23,3 +23,30 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 }
+
+.main-container {
+  text-align: center;
+}
+
+.search-field {
+  padding: 3rem 0;
+  background-color: #fe5395;
+  margin: 0;
+
+  input {
+    border-radius: 20px;
+    width: 15rem;
+    height: 1.5rem;
+    padding: 1rem;
+    background-color: #ec4c8b;
+    color: #fff;
+    border-style: none;
+    border-color: #df4783;
+    text-align: center;
+  }
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #fff;
+}

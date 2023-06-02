@@ -25,7 +25,7 @@ function Pagination({
     <ul
       className="pagination-wrapper"
       // Do not remove the aria-label below, it is used for Hatchways automation.
-      aria-label="dryv pagination list"
+      aria-label="news pagination list"
     >
       <li className="paginationItem">
         <button
@@ -103,6 +103,14 @@ function Pagination({
     </ul>
   );
 }
+Pagination.propTypes = {
+  totalCount: PropTypes.number,
+  currentPage: PropTypes.number,
+  pageSize: PropTypes.number,
+  pageSizeOptions: PropTypes.instanceOf(Array),
+  onPageChange: PropTypes.func,
+  onPageSizeOptionChange: PropTypes.func,
+};
 
 Pagination.defaultProps = {
   totalCount: 0,
