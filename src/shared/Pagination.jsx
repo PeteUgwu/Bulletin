@@ -1,9 +1,9 @@
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import usePagination, { DOTS } from "../hooks/usePagination";
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
-import PropTypes from "prop-types";
-import React from "react";
-import { nanoid } from "nanoid";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { nanoid } from 'nanoid';
+import usePagination, { DOTS } from '../hooks/usePagination';
 
 function Pagination({
   onPageChange,
@@ -55,7 +55,7 @@ function Pagination({
           <li
             key={key}
             className="paginationItem"
-            aria-current={`${pageNumber === currentPage ? "page" : "false"}`} // change this line to highlight a current page.
+            aria-current={`${pageNumber === currentPage ? 'page' : 'false'}`} // change this line to highlight a current page.
           >
             <button
               type="button"

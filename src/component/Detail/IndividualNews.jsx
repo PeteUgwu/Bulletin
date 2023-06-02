@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { oneNews } from "../../redux/news/newsSlice";
-import S from "../../style/component/detail/detail.module.scss";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import { oneNews } from '../../redux/news/newsSlice';
+import S from '../../style/component/detail/detail.module.scss';
 
 const IndividualNews = () => {
   const newsDetail = useSelector((state) => state.news.singleNews);
@@ -24,7 +24,10 @@ const IndividualNews = () => {
         <div className={`${S.detailImage}`}>
           <img src={newsDetail?.urlToImage} alt="article" />
           <div className={`${S.authorPub}`}>
-            <span>Written By: {newsDetail?.author}</span>
+            <span>
+              Written By:
+              {newsDetail?.author}
+            </span>
             <span>{newsDetail?.publishedAt}</span>
           </div>
         </div>

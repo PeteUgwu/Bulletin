@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import getNews from "../../services/news.service";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import getNews from '../../services/news.service';
 
-export const fetchNews = createAsyncThunk("fetch_news", async () => {
+export const fetchNews = createAsyncThunk('fetch_news', async () => {
   const resp = await getNews();
   const data = resp.articles;
   return data;
@@ -13,7 +13,7 @@ const initialState = {
 };
 
 const newsSlice = createSlice({
-  name: "news",
+  name: 'news',
   initialState,
   reducers: {
     oneNews: (state, action) => {
@@ -24,7 +24,7 @@ const newsSlice = createSlice({
         }
         return false;
       });
-      console.log(newSingleState, "just add something to it");
+      console.log(newSingleState, 'just add something to it');
       return {
         ...state,
         singleNews: newSingleState,

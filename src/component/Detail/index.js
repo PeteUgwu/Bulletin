@@ -1,3 +1,3 @@
-import IndividualNews from "./IndividualNews";
+import IndividualNews from './IndividualNews';
 
 export default IndividualNews;
