@@ -1,0 +1,54 @@
+.homeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 20px;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.mainContainer {
+  text-align: center;
+}
+
+.searchField {
+  margin-top: 2rem;
+
+  input {
+    border-radius: 20px;
+    width: 20rem;
+    height: 1.5rem;
+    padding: 1rem;
+    color: #000;
+    text-align: center;
+  }
+
+  input::placeholder {
+    font-style: italic;
+    color: #000;
+  }
+}
+
+.authorPub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 10px;
+  }
+}
