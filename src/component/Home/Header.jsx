@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import React from "react";
 import S from "../../style/component/home/header.module.scss";
 

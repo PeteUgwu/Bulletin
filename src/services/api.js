@@ -8,14 +8,4 @@ const api = axios.create({
   },
 });
 
-// api.interceptors.response.use(
-//   (data) => data,
-//   (error) => {
-//     if (error.response?.status === 401) {
-//       localStorage.removeItem("todo-token");
-//       window.location.href = "/login";
-//     }
-//     throw error;
-//   }
-// );
 export default api;
