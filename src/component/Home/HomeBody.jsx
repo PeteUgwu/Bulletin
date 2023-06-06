@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import moment from 'moment/moment';
-import { fetchNews } from '../../redux/news/newsSlice';
-import S from '../../style/component/home/homebody.module.scss';
-import Pagination from '../../shared/Pagination';
-import newsList from '../../shared/Data.json';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import moment from "moment/moment";
+import { fetchNews } from "../../redux/news/newsSlice";
+import S from "../../style/component/home/homebody.module.scss";
+import Pagination from "../../shared/Pagination";
+import newsList from "../../shared/Data.json";
 
 const HomeBody = () => {
   // const newsList = useSelector((state) => state.news.news);
@@ -16,10 +16,10 @@ const HomeBody = () => {
   const [limit] = useState(4);
   const [pageCount] = useState(Math.ceil(newsList.length / limit));
   const [currentPageData, setCurrentPageData] = useState(
-    newsList.slice(0, limit),
+    newsList.slice(0, limit)
   );
   // const [articleList, setArticleList] = useState([]);
-  const [articles, setArticles] = useState('');
+  const [articles, setArticles] = useState("");
 
   const updatePage = (pageNo) => {
     if (pageNo > pageCount) {
@@ -54,7 +54,9 @@ const HomeBody = () => {
   useEffect(() => {
     if (articles) {
       const time = setTimeout(() => {
-        const filterArticles = newsList.filter((arti) => arti.source.name.toLowerCase().includes(articles.toLowerCase()));
+        const filterArticles = newsList.filter((arti) =>
+          arti.source.name.toLowerCase().includes(articles.toLowerCase())
+        );
         setCurrentPageData(filterArticles);
         setCurrentPage(1);
       }, 1000);
@@ -77,9 +79,7 @@ const HomeBody = () => {
             onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
-      </div>
 
-      <div>
         <Pagination
           currentPage={currentPage}
           totalCount={newsList?.length}
@@ -91,8 +91,8 @@ const HomeBody = () => {
       </div>
 
       <div className={`${S.homeContainer}`}>
-        {currentPageData?.length
-          && currentPageData.map((news) => (
+        {currentPageData?.length &&
+          currentPageData.map((news) => (
             <div key={news?.publishedAt} className={`${S.card}`}>
               <h6>{news.title}</h6>
               <p>{news.description}</p>
@@ -102,12 +102,15 @@ const HomeBody = () => {
                   {news.author}
                 </p>
                 <p>
-                  Published at:
-                  {' '}
-                  {moment(news.publishedAt).format('MMM Do YY')}
+                  Published at: {moment(news.publishedAt).format("MMM Do YY")}
                 </p>
               </div>
-              <Link to={`/news/${news.publishedAt}`}>Click to view</Link>
+              <Link
+                to={`/news/${news.publishedAt}`}
+                className={`${S.viewLink}`}
+              >
+                Click to view
+              </Link>
             </div>
           ))}
       </div>
