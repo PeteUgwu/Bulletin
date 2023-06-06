@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => (
   <nav className="Nav">
     <ul className="flex Nav-items">
-      <li className="flex">
+      <li className="flex Icon-logo">
         <NavLink to="/" exact activeClassName="active">
           <span className="material-icons Icon-left">chevron_left</span>
         </NavLink>
