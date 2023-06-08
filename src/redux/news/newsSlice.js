@@ -24,7 +24,6 @@ const newsSlice = createSlice({
         }
         return false;
       });
-      console.log(newSingleState, 'just add something to it');
       return {
         ...state,
         singleNews: newSingleState,

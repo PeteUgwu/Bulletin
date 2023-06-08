@@ -1,5 +1,5 @@
-import React from "react";
-import S from "../../style/component/home/header.module.scss";
+import React from 'react';
+import S from '../../style/component/home/header.module.scss';
 
 const Header = () => (
   <>

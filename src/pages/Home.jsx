@@ -1,5 +1,5 @@
-import React from "react";
-import { Header, HomeBody } from "../component/Home";
+import React from 'react';
+import { Header, HomeBody } from '../component/Home';
 
 const Home = () => (
   <>

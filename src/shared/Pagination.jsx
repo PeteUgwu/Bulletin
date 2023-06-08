@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/aria-proptypes */
+/* eslint-disable react/prop-types */
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 import PropTypes from 'prop-types';
@@ -7,11 +9,9 @@ import usePagination, { DOTS } from '../hooks/usePagination';
 
 function Pagination({
   onPageChange,
-  onPageSizeOptionChange,
   totalCount,
   currentPage,
   pageSize,
-  pageSizeOptions,
   onNext,
   onPrev,
 }) {
@@ -82,24 +82,6 @@ function Pagination({
           <BsChevronRight />
         </button>
       </li>
-
-      {/* {
-        pageSizeOptions && onPageSizeOptionChange?  <select
-        className="paginationSelector"
-        // Do not remove the aria-label below, it is used for Hatchways automation.
-        aria-label="Select page size"
-        value={pageSize}
-        onChange={(e) => {
-          onPageSizeOptionChange(Number(e.target.value));
-        }}
-      >
-        {pageSizeOptions.map((size) => (
-          <option key={size} defaultValue={pageSize === size} value={size}>
-            {size} per page
-          </option>
-        ))}
-      </select> : ''
-     } */}
     </ul>
   );
 }
@@ -107,9 +89,7 @@ Pagination.propTypes = {
   totalCount: PropTypes.number,
   currentPage: PropTypes.number,
   pageSize: PropTypes.number,
-  pageSizeOptions: PropTypes.instanceOf(Array),
   onPageChange: PropTypes.func,
-  onPageSizeOptionChange: PropTypes.func,
 };
 
 Pagination.defaultProps = {

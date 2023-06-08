@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { oneNews } from "../../redux/news/newsSlice";
-import S from "../../style/component/detail/detail.module.scss";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import { oneNews } from '../../redux/news/newsSlice';
+import S from '../../style/component/detail/detail.module.scss';
 
 const IndividualNews = () => {
   const newsDetail = useSelector((state) => state.news.singleNews);
