@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 export const DOTS = '...';
 
 function usePagination({ currentPage, pageCount }) {

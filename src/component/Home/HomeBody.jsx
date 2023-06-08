@@ -21,9 +21,9 @@ const HomeBody = () => {
   // const [articleList, setArticleList] = useState([]);
   const [articles, setArticles] = useState('');
 
-  const updatePage = (pageNo) => {
+  const updatePage = (pageNos) => {
+    let pageNo = pageNos;
     if (pageNo > pageCount) {
-      // eslint-disable-next-line no-param-reassign
       pageNo = 1;
     }
     const skip = (currentPage - 1) * limit;
@@ -51,16 +51,29 @@ const HomeBody = () => {
     updatePage(currentPage);
   }, []);
 
+  // useEffect(() => {
+  //   if (articles) {
+  //     const time = setTimeout(() => {
+  //       const filterArticles = newsList.filter((arti) => arti.source.name.toLowerCase()
+  //         .includes(articles.toLowerCase()));
+  //       setCurrentPageData(filterArticles);
+  //       setCurrentPage(1);
+  //     }, 1000);
+  //     return () => clearTimeout(time);
+  //   }
+  //   updatePage(currentPage);
+  // }, [articles]);
   useEffect(() => {
-    if (articles) {
-      const time = setTimeout(() => {
-        const filterArticles = newsList.filter((arti) => arti.source.name.toLowerCase().includes(articles.toLowerCase()));
-        setCurrentPageData(filterArticles);
-        setCurrentPage(1);
-      }, 1000);
-      return () => clearTimeout(time);
-    }
-    updatePage(currentPage);
+    const filterArticles = newsList.filter((arti) => arti.source.name.toLowerCase()
+      .includes(articles.toLowerCase()));
+    setCurrentPageData(filterArticles);
+    setCurrentPage(1);
+
+    const time = setTimeout(() => {
+      updatePage(currentPage);
+    }, 1000);
+
+    return () => clearTimeout(time);
   }, [articles]);
 
   const handleSearch = (text) => {
@@ -77,9 +90,7 @@ const HomeBody = () => {
             onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
-      </div>
 
-      <div>
         <Pagination
           currentPage={currentPage}
           totalCount={newsList?.length}
@@ -107,7 +118,12 @@ const HomeBody = () => {
                   {moment(news.publishedAt).format('MMM Do YY')}
                 </p>
               </div>
-              <Link to={`/news/${news.publishedAt}`}>Click to view</Link>
+              <Link
+                to={`/news/${news.publishedAt}`}
+                className={`${S.viewLink}`}
+              >
+                Click to view
+              </Link>
             </div>
           ))}
       </div>

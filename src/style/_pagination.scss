@@ -17,6 +17,8 @@
       border-radius: 50%;
       overflow: hidden;
       color: rgb(0, 0, 0);
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
 
       &:hover {
         background-color: rgba(159, 159, 159, 0.295);
@@ -59,5 +61,15 @@
     border: none;
     outline: none;
     margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination-wrapper {
+    margin-top: 2rem;
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
   }
 }
